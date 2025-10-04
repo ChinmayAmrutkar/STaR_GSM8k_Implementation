@@ -30,6 +30,7 @@ This workflow is illustrated in the diagram from the original paper:
 ├── 02_finetune_sft.py                # Script to fine-tune and evaluate the vanilla SFT model (Baseline 2)
 ├── 03_generate_star_dataset.py       # Script to generate the bootstrapped STaR dataset
 ├── 04_finetune_star.py               # Script to fine-tune and evaluate the final STaR model
+├── evaluate_model.py                 # General script to evaluate any fine-tuned model
 ├── utils.py                          # Helper functions for data processing and training
 ├── requirements.txt                  # Project dependencies
 └── README.md                         # This file
@@ -78,6 +79,7 @@ Execute the scripts in numerical order to run the full pipeline.
 2.  **Run Baseline 2 (Vanilla SFT):**
     ```bash
     python 02_finetune_sft.py
+    python evaluate_model.py --model_path ./gsm8k_sft_model
     ```
 
 3.  **Generate the STaR Dataset:**
@@ -89,6 +91,7 @@ Execute the scripts in numerical order to run the full pipeline.
 4.  **Fine-Tune and Evaluate the STaR Model:**
     ```bash
     python 04_finetune_star.py
+    python evaluate_model.py --model_path ./star_model
     ```
 
 ## Current Results (In Progress)
