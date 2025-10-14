@@ -1,0 +1,70 @@
+
+================================================================================
+STaR TRAINING COMPLETE - SUMMARY REPORT
+================================================================================
+
+EXPERIMENT CONFIGURATION
+================================================================================
+Model: meta-llama/Llama-3.2-3B-Instruct
+Training Dataset: 7473 examples
+Test Dataset: 1319 examples
+STaR Iterations: 1
+Completed Iterations: 1
+Epochs per Iteration: 2
+Batch Size: 4
+Gradient Accumulation: 4
+Effective Batch Size: 16
+Learning Rate: 2e-05
+
+TRAINING TIMELINE
+================================================================================
+Started: 2025-10-12T18:26:48.222281
+Completed: 2025-10-12T21:39:05.885057
+Completed Iterations: [0]
+
+DATASET GENERATION SUMMARY
+================================================================================
+
+Iteration 0:
+  Total examples: 7473
+  Generated (no hint): 5095 (68.2%)
+  Rationalized (with hint): 1312 (17.6%)
+  Failed: 1066 (14.3%)
+  Success rate: 85.7%
+  Training examples: 6407
+
+================================================================================
+ACCURACY PROGRESSION
+================================================================================
+After Iteration 0: 0.6391 (843/1319)
+
+================================================================================
+FINAL RESULTS
+================================================================================
+Final Test Accuracy: 0.6338
+Correct Predictions: 836/1319
+
+================================================================================
+FILES GENERATED
+================================================================================
+Main Results:
+  - ./small_project/star/results_summary.json
+  - ./small_project/star/detailed_results.json
+  - ./small_project/star/star_training_analysis.png
+
+Checkpoints:
+  - ./small_project/star/checkpoints/iteration_*/model/
+  - ./small_project/star/checkpoints/iteration_*/star_dataset.json
+  - ./small_project/star/checkpoints/iteration_*/generation_stats.json
+
+Training State:
+  - ./small_project/star/training_state.json
+
+================================================================================
+RESUMABILITY
+================================================================================
+This experiment used checkpoint-based resumable training.
+If interrupted, re-run all cells to resume from the last completed iteration.
+To restart from scratch, set Config.FORCE_RESTART = True
+
+================================================================================

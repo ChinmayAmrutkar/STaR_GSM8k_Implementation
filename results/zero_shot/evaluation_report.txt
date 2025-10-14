@@ -1,0 +1,32 @@
+
+ZERO-SHOT CHAIN-OF-THOUGHT EVALUATION REPORT
+================================================================================
+
+Model: meta-llama/Llama-3.2-3B-Instruct
+Test Set Size: 1319
+Date: 2025-10-07 17:22:03
+
+OVERALL RESULTS
+================================================================================
+Accuracy: 0.5989 (790/1319)
+
+ERROR ANALYSIS
+================================================================================
+Total Errors: 529
+  - Wrong Answer: 529 (40.1%)
+  - No Answer Extracted: 0 (0.0%)
+  - Repetitive Output: 10 (0.8%)
+
+RESPONSE STATISTICS
+================================================================================
+Average Response Length: 586.7 characters
+Min Response Length: 122 characters
+Max Response Length: 1203 characters
+
+NOTES
+================================================================================
+- This is a zero-shot evaluation (no fine-tuning)
+- The model uses chain-of-thought prompting
+- Temperature: 0.7, Top-p: 0.9
+- Generation uses sampling (not greedy decoding)
+
