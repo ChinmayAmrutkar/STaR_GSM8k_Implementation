@@ -1,1 +1,77 @@
-# STaR_GSM8k_Implementation
+# Implementing STaR: Self-Taught Reasoner on GSM8k with Llama 3
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+## 📖 Overview
+
+This repository contains the implementation and evaluation of the methodology described in the paper **"STaR: Self-Taught Reasoner Bootstrapping Reasoning With Reasoning"** (Zelikman et al., 2022).
+
+The objective was to apply the STaR technique to the **GSM8k dataset** using the `meta-llama/Llama-3.2-3B-Instruct` model. The performance of the final STaR-tuned model is compared against two key baselines: a pre-trained Zero-Shot Chain-of-Thought (CoT) model and a model fine-tuned using a standard Supervised Fine-Tuning (SFT) approach. All experiments were conducted on the ASU SOL computing cluster using an NVIDIA A100 GPU.
+
+## ✨ Key Features
+
+* **Zero-Shot CoT:** A baseline evaluation of the pre-trained model's reasoning ability.
+* **Supervised Fine-Tuning (SFT):** A standard baseline for fine-tuning on the GSM8k dataset.
+* **STaR Implementation:** The core implementation of the Self-Taught Reasoner algorithm, including iterative rationale generation and model re-training.
+
+## 📊 Results
+
+The project successfully demonstrated that the STaR methodology improves the model's mathematical reasoning capabilities, outperforming both the zero-shot and standard fine-tuning baselines.
+
+| Method                          | Accuracy |
+| ------------------------------- | :------: |
+| Zero-Shot CoT (Baseline)        |  59.89%  |
+| Supervised Fine-Tuning (SFT)    |  57.32%  |
+| **STaR (Self-Taught Reasoner)** | **63.38%** |
+
+The STaR process iteratively generates a new dataset from the model's own reasoning and retrains on it, leading to a steady improvement in test accuracy.
+
+![STaR Training Analysis](results/star/star_training_analysis.jpg)
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+* Python 3.8+
+* PyTorch
+* An NVIDIA GPU with CUDA support is highly recommended.
+
+### Installation
+
+1.  Clone the repository:
+    ```bash
+    git clone [https://github.com/YOUR_USERNAME/STaR-GSM8k-Llama.git](https://github.com/YOUR_USERNAME/STaR-GSM8k-Llama.git)
+    cd STaR-GSM8k-Llama
+    ```
+
+2.  Install the required dependencies:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+### Usage
+
+The experiments are organized into separate Jupyter notebooks within the `src/` directory. Run them in the following order:
+
+1.  **`1_zero_shot_cot.ipynb`**: Establishes the baseline performance.
+2.  **`2_supervised_finetuning.ipynb`**: Runs the SFT baseline.
+3.  **`3_star_implementation.ipynb`**: Executes the full STaR training loop.
+
+## 📁 Repository Structure
+```
+STaR-GSM8k-Llama/
+├── .gitignore
+├── LICENSE
+├── README.md
+├── requirements.txt
+│
+├── src/                  # Source code (Jupyter Notebooks)
+├── data/                 # Dataset files
+├── results/              # Output files, logs, and plots
+└── report/               # Project report PDF
+```
+##  Acknowledgments
+
+* Original Paper: [STaR: Self-Taught Reasoner Bootstrapping Reasoning With Reasoning](https://arxiv.org/abs/2203.14465)
+* Dataset: [GSM8k (Grade School Math 8K)](https://github.com/openai/grade-school-math)
+* Model: [meta-llama/Llama-3.2-3B-Instruct](https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct)
