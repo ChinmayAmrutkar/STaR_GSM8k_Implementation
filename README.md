@@ -40,7 +40,7 @@ The STaR process iteratively generates a new dataset from the model's own reason
 
 1.  Clone the repository:
     ```bash
-    git clone [https://github.com/YOUR_USERNAME/STaR-GSM8k-Llama.git](https://github.com/YOUR_USERNAME/STaR-GSM8k-Llama.git)
+    git clone https://github.com/ChinmayAmrutkar/STaRGSM8k.git
     cd STaR-GSM8k-Llama
     ```
 
